@@ -3,7 +3,7 @@
 class Shutdown
   constructor : (params) ->
     @exec = require('child_process').exec
-    # default power off
+    # default power-off
     @flag = params.flag or 'P'
     # default Now
     @time = params.time or 0

@@ -1,9 +1,10 @@
-# Backup Smart Policy for [Trailbot](https://trailbot.io)
-This [Trailbot Smart Policy](https://github.com/trailbot/client/wiki/Smart-Policies) backs up the files it is monitoring every time they are modified.
+# Shutdown Smart Policy for [Trailbot](https://trailbot.io)
+This [Trailbot Smart Policy](https://github.com/trailbot/client/wiki/Smart-Policies) shuts down the machine.
 
 ## Parameters
 This policy accepts the following parameters:
 
 | Name   | Description                                                     | Default value | Required |
-|--------|-----------------------------------------------------------------|---------------|------------|
-| copyTo | Absolute path of the folder where you want to store the backup. | _null_        | :white_check_mark:|
+|--------|-----------------------------------------------------------------|---------------|----------|
+| flag   |  The flag used to shutdown the machine (`P`, `r`, `h`)          | P             | false    |
+| time   |  The time in minutes before the machine shuts down              | 0             | false    |
