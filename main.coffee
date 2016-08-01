@@ -10,8 +10,8 @@ class Shutdown
 
   receiver : (changes) =>
         # run linux command to shutdown machine
-        exec "/sbin/shutdown -#{@flag} +#{@time}", (err, stdout) ->
+        @exec "/sbin/shutdown -#{@flag} +#{@time}", (err, stdout) ->
             console.log "exec error: #{error}" if err
-            console.log "Shuting down in #{@time}
+            console.log "Shuting down in #{@time}"
 
 module.exports = Shutdown
