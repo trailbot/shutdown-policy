@@ -1,0 +1,34 @@
+{
+    "name": "shutdown-policy",
+    "version": "0.1.1",
+    "dependencies": {},
+    "policy": {
+        "language": "coffeescript",
+        "params": {
+            "command": {
+                "type": "select",
+                "options": {
+                    "P": {
+                        "label": "power-off"
+                    },
+                    "r": {
+                        "label": "reboot"
+                    },
+                    "h": {
+                        "label": "halt"
+                    }
+                },
+                "required": false,
+                "label": "Shutdown flag",
+                "default": "P"
+            },
+            "time": {
+                "type": "number",
+                "required": false,
+                "label": "time in minutes before the command is executed",
+                "default": 0
+            }
+        },
+        "defaultName": "Shutdown"
+    }
+}
