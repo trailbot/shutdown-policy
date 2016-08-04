@@ -25,7 +25,8 @@
             "time": {
                 "type": "number",
                 "required": false,
-                "label": "time in minutes before the command is executed",
+                "label": "Delay",
+                "tip": "time in minutes before the command is executed",
                 "default": 0
             }
         },
