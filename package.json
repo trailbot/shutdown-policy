@@ -1,6 +1,6 @@
 {
     "name": "shutdown-policy",
-    "version": "0.1.1",
+    "version": "0.2.0",
     "dependencies": {},
     "policy": {
         "language": "coffeescript",
@@ -8,15 +8,9 @@
             "command": {
                 "type": "select",
                 "options": {
-                    "P": {
-                        "label": "power-off"
-                    },
-                    "r": {
-                        "label": "reboot"
-                    },
-                    "h": {
-                        "label": "halt"
-                    }
+                    "P": "power-off",
+                    "r": "reboot",
+                    "h": "halt"
                 },
                 "required": false,
                 "label": "Shutdown flag",

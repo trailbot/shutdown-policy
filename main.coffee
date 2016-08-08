@@ -8,7 +8,7 @@ class Shutdown
     # default Now
     @time = params.time or 0
 
-  receiver : (changes) =>
+  receiver : =>
         # run linux command to shutdown machine
         @exec "/sbin/shutdown -#{@flag} +#{@time}", (err, stdout) =>
             console.log "exec error: #{error}" if err
