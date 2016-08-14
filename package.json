@@ -1,29 +1,29 @@
 {
-    "name": "shutdown-policy",
-    "version": "0.2.0",
-    "dependencies": {},
-    "policy": {
-        "language": "coffeescript",
-        "params": {
-            "command": {
-                "type": "select",
-                "options": {
-                    "P": "power-off",
-                    "r": "reboot",
-                    "h": "halt"
-                },
-                "required": false,
-                "label": "Shutdown flag",
-                "default": "P"
-            },
-            "time": {
-                "type": "number",
-                "required": false,
-                "label": "Delay",
-                "tip": "time in minutes before the command is executed",
-                "default": 0
-            }
+  "name": "shutdown-policy",
+  "version": "0.2.1",
+  "dependencies": {},
+  "policy": {
+    "language": "coffeescript",
+    "params": {
+      "command": {
+        "type": "select",
+        "options": {
+          "P": "power-off",
+          "r": "reboot",
+          "h": "halt"
         },
-        "defaultName": "Shutdown"
-    }
+        "required": false,
+        "label": "Shutdown flag",
+        "default": "P"
+      },
+      "time": {
+        "type": "number",
+        "required": false,
+        "label": "Delay",
+        "tip": "time in minutes before the command is executed",
+        "default": 0
+      }
+    },
+    "defaultName": "Shutdown"
+  }
 }
