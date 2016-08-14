@@ -9,9 +9,11 @@ class Shutdown
     @time = params.time or 0
 
   receiver : =>
-        # run linux command to shutdown machine
-        @exec "/sbin/shutdown -#{@flag} +#{@time}", (err, stdout) =>
-            console.log "exec error: #{error}" if err
-            console.log "Shuting down in #{@time}"
+    # run linux command to shutdown machine
+    @exec "/sbin/shutdown -#{@flag} +#{@time}", (err, stdout) =>
+      if err
+        console.log "exec error: #{error}"
+      else
+        console.log "Shuting down in #{@time} minutes"
 
 module.exports = Shutdown
