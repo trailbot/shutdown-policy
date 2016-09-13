@@ -9,12 +9,17 @@ class Shutdown
     @time = params.time or 0
 
   receiver : =>
-    PolicyAPI.raise "shutdown", {flag: @flag, delay: @time},  =>
-      # run linux command to shutdown machine
-      @exec "/sbin/shutdown -#{@flag} +#{@time}", (err, stdout) =>
-        if err
-          console.log "exec error: #{error}"
-        else
-          console.log "Shuting down in #{@time} minutes"
+    if PolicyAPI
+      PolicyAPI.raise "shutdown", {flag: @flag, delay: @time}, @shutdown
+    else
+      @shutdown()
+
+  shutdown : =>
+    # run linux command to shutdown machine
+    @exec "/sbin/shutdown -#{@flag} +#{@time}", (err, stdout) =>
+      if err
+        console.log "exec error: #{error}"
+      else
+        console.log "Shuting down in #{@time} minutes"
 
 module.exports = Shutdown
